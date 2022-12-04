@@ -25,4 +25,21 @@ const solve = (inputs) => {
   return count;
 };
 
+const solve2 = (inputs) => {
+  let count = 0;
+  let results = format(inputs);
+  results = results.map((result) => {
+    if (
+      !(
+        (result[0][0] < result[1][0] && result[0][1] < result[1][0]) ||
+        (result[1][0] < result[0][0] && result[1][1] < result[0][0])
+      )
+    ) {
+      count++;
+    }
+  });
+  return count;
+};
+
 console.log(solve(inputs));
+console.log(solve2(inputs));

@@ -15,7 +15,7 @@ export const solve = async (): Promise<{ solutions: Solutions }> => {
   const part1 = (input: string[]): number =>
     input
       .map((line) => line.split("").map(Number).filter(Boolean))
-      .reduce((sum, arr) => (sum += +`${arr[0]}${arr[arr.length - 1]}`), 0);
+      .reduce((sum, arr) => (sum += arr[0] * 10 + arr[arr.length - 1]), 0);
 
   const part2 = (input: string[]): number =>
     input
@@ -29,7 +29,7 @@ export const solve = async (): Promise<{ solutions: Solutions }> => {
           .split("")
           .map(Number)
           .filter(Boolean)
-          .map((_, i, arr) => +`${arr[0]}${arr[arr.length - 1]}`)
+          .map((_, i, arr) => arr[0] * 10 + arr[arr.length - 1])
           .reduce((_, value) => value)
       )
       .reduce((sum, value) => sum + value, 0);

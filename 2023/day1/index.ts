@@ -3,7 +3,7 @@ interface Solutions {
   part2: number;
 }
 
-const solve = async (): Promise<{ solutions: Solutions }> => {
+export const solve = async (): Promise<{ solutions: Solutions }> => {
   const input: string[] = (
     await fetch(`https://adventofcode.com/2023/day/1/input`, {
       headers: {
@@ -43,5 +43,4 @@ const solve = async (): Promise<{ solutions: Solutions }> => {
 };
 
 const solutions = await solve();
-
-console.log(solutions);
+console.log(JSON.stringify(solutions));
